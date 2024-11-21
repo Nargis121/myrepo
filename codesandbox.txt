@@ -1,0 +1,126 @@
+codesandbox
+1.TASK
+import React from "react";
+import ReactDom from "react-dom";
+ReactDom.render(
+  <div>
+    <h1>Winter</h1>
+    <ul>
+      <li>Snow</li>
+      <li>Cold</li>
+      <li>fog</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
+2.TASK
+import React from "react";
+import ReactDom from "react-dom";
+var yourName = "Nargis";
+var currentYear = new Date().getFullYear();
+ReactDom.render(
+  <div>
+    <p>Created By {yourName}</p>
+    <p>&copy; {currentYear}.</p>
+  </div>,
+  document.getElementById("root")
+);
+3.TASK
+//Create a React app from scratch.
+//Show a single h1 that says "Good morning" if between midnight and 12PM.
+//or "Good Afternoon" if between 12PM and 6PM.
+//or "Good evening" if between 6PM and midnight.
+//Apply the "heading" style in the styles.css
+//Dynamically change the color of the h1 using inline css styles.
+//Morning = red, Afternoon = green, Night = blue.
+import React from "react";
+import ReactDom from "react-dom";
+var text = new Date().getHours();
+if (text < 12) {
+  text = "Good Morning";
+  color = "red";
+} else if (text > 12 && text < 6) {
+  text = "Good Afternoon";
+  color = "green";
+} else {
+  text = "Good Night";
+  color = "blue";
+}
+ReactDom.render(
+  <div>
+    <h1 style={{ color: color }} className="heading">
+      {text}
+    </h1>
+  </div>,
+  document.getElementById("root")
+);
+4.TASK KEEPER APP
+//1. Create a new React app.
+//2. Create a App.jsx component.
+//3. Create a Header.jsx component that renders a <header> element
+//to show the Keeper App name in an <h1>.
+//4. Create a Footer.jsx component that renders a <footer> element
+//to show a copyright message in a <p> with a dynamically updated year.
+//5. Create a Note.jsx component to show a <div> element with a
+//<h1> for a title and a <p> for the content.
+//6. Make sure that the final website is styled like the example shown here:
+//https://l1pp6.csb.app/
+
+//HINT: You will need to study the classes in teh styles.css file to appy styling.
+
+         INDEX.JSX
+import React from "react";
+import ReactDom from "react-dom";
+import App from "./app";
+ReactDom.render(<App />, document.getElementById("root"));
+         APP.JSX
+import React from "react";
+import Header from "./header";
+import Footer from "./footer";
+import Note from "./note";
+function App() {
+  return (
+    <div>
+      <Header />
+      <Note />
+      <Footer />
+    </div>
+  );
+}
+export default App;
+      NOTE.JSX
+import React from "react";
+function Note() {
+  return (
+    <div>
+      <h1>hello</h1>
+      <p>hii</p>
+    </div>
+  );
+}
+export default Note;
+      FOOTER.JSX
+import React from "react";
+function Footer() {
+  const currentYear = new Date().getFullYear();
+  return (
+    <footer>
+      <p>
+        <footer>&copy; {currentYear}</footer>
+      </p>
+    </footer>
+  );
+}
+export default Footer;
+     HEADER.JSX
+import React from "react";
+function Header() {
+  return (
+    <header>
+      <h1>Keeper</h1>
+    </header>
+  );
+}
+export default Header;
+
+

@@ -1,0 +1,32 @@
+HEROBANNER
+
+CSS:
+
+.head_1 {
+  background-color: brown;
+  font-size: 50px;
+  text-align: center;
+}
+
+.para {
+  font-size: 30px;
+  text-align: center;
+}
+
+.app {
+  background-color: darkgray;
+}
+
+
+
+HEADER:
+function Heading() {
+  return (
+    <div>
+      <h1 className="head_1">Welcome</h1>
+      <p className="para">Here we serve you the best of everything</p>
+    </div>
+  );
+}
+
+export default Heading;
